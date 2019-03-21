@@ -23,27 +23,27 @@ export default {
 <style lang="stylus" scoped>
   @import "~styles/varibles.styl"
   .header
-    line-height: .86rem;
-    display:flex;
-    background-color $bgColor;
+    line-height: .86rem
+    display:flex
+    background-color $bgColor
     color: white
 
   .header-left
-    width :.84rem;
-    float :left;
+    width :.84rem
+    float :left
 
   .header-input
-    flex :1;
+    flex :1
     height .62rem
     line-height .62rem
-    margin-top:.12rem;
-    background-color :#ffffff;
+    margin-top:.12rem
+    background-color :#ffffff
     color #ccc
     border-radius  .1rem
 
   .header-right
-    width :1.24rem;
-    float :right;
+    width :1.24rem
+    float :right
     //text-align:center;
 
 </style>

@@ -20,7 +20,7 @@ npm run build --report
 # 解决click时间延迟 安装依赖
 npm install fastclick --save
 
-#css编写辅助工具
+#css编写辅助工具  css预处理器框架 使css支持全局函数命名 父子类嵌套 继承@extend
 npm install stylus --save
 npm install stylus-loader --save
 
