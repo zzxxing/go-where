@@ -97,9 +97,12 @@ export default {
 </script>
 <!--scoped css只在本组件生效-->
 <style lang="stylus" scoped>
-  .icons
+  @import "~styles/varibles.styl"
+  @import "~styles/mixins.styl"
+  .icons >>> .swiper-container
     overflow hidden
     height 4rem
+    margin-top .1rem
     //padding-bottom 50%
     .icon
       overflow hidden
@@ -110,6 +113,7 @@ export default {
         text-align center
         color $darkTextColor
         margin .1rem
+        ellipsis()
         //margin-top -.34rem
       .icon-img
         padding .1rem
