@@ -1,9 +1,9 @@
 <!-- The ref attr used to find the swiper instance -->
 <template>
   <div class="swiper">
-    <swiper :options="swiperOption">
-      <swiper-slide v-for="item of swiperList" :key="item.id">
-        <img class="swiper-img" :src="item.imgurl" alt="">
+    <swiper :options="swiperOption" v-if="showswiper">
+      <swiper-slide v-for="item of this.swiperList" :key="item.id">
+        <img class="swiper-img" :src="item.imgUrl" alt="">
       </swiper-slide>
 
       <div class="swiper-pagination"  slot="pagination"></div>
@@ -14,6 +14,9 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    swiperList: Array
+  },
   data () {
     return {
       swiperOption: {
@@ -21,30 +24,13 @@ export default {
         loop: true, // 可无限循环
         autoplay: 3000 // 自动轮播
         // grabCursor: true
-      },
-      swiperList: [
-        {
-          id: 1,
-          imgurl: 'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/b67b8e466eb2625f6d3141c1a7510c94.jpg_890x330_0aa64222.jpg'
-        },
-        {
-          id: 2,
-          imgurl: 'https://imgs.qunarzz.com/piao/fusion/1510/a9/9ab526588c4282.jpg_890x330_f0c3609b.jpg'
-        },
-        {
-          id: 3,
-          imgurl: 'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/b67b8e466eb2625f6d3141c1a7510c94.jpg_890x330_0aa64222.jpg'
-        },
-        {
-          id: 4,
-          imgurl: '//img1.qunarzz.com/vc/bf/9d/a3/67b7b37511fa26a78298bf1da1.jpg'
-        },
-        {
-          id: 5,
-          imgurl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/d7bbc21db442366a882e04ddc984669a.jpg_750x200_85e640d9.jpg'
-        }
-      ]
+      }
 
+    }
+  },
+  computed: {
+    showswiper () {
+      return this.swiperList.length
     }
   }
 }

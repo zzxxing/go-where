@@ -3,9 +3,9 @@
   <div>
     <div class="recommend-title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item in weekendList" :key="item.id">
         <div class="item-wapper">
-          <img class="item-img"  :src="item.imgurl" alt="">
+          <img class="item-img"  :src="item.imgUrl" alt="">
         </div>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -18,39 +18,17 @@
 </template>
 
 <script>
-  export default {
-    name: 'Weekend',
-    data () {
-      return {
-        recommendList: [
-          {
-            id: 1,
-            imgurl: 'http://img1.qunarzz.com/sight/source/1812/48/a34a5520c293d0.jpg_r_640x214_e1f38971.jpg',
-            title: '青岛海泉湾度假区',
-            desc: '浪漫青岛,浪漫的海洋主题乐园'
-          },
-          {
-            id: 2,
-            imgurl: 'http://img1.qunarzz.com/sight/source/1812/48/a34a5520c293d0.jpg_r_640x214_e1f38971.jpg',
-            title: '青岛森林野生动物世界',
-            desc: '浪漫青岛'
-          },
-          {
-            id: 3,
-            imgurl: 'http://img1.qunarzz.com/sight/source/1505/85/708da4ab8dba17.jpg_r_640x214_d3d8cfa5.jpg',
-            title: '青岛必打卡',
-            desc: '浪漫青岛,浪漫的海洋主题乐园'
-          },
-          {
-            id: 4,
-            imgurl: 'http://img1.qunarzz.com/sight/source/1505/d2/bde427ee954da9.jpg_r_640x214_ae0ab333.jpg',
-            title: '青岛儿童畅玩',
-            desc: '浪漫青岛,浪漫的海洋主题乐园'
-          }
-        ]
-      }
+export default {
+  name: 'Weekend',
+  props: {
+    weekendList: Array
+  },
+  data () {
+    return {
+
     }
   }
+}
 </script>
 <!--scoped css只在本组件生效-->
 <style lang="stylus" scoped>
